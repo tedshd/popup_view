@@ -19,7 +19,7 @@ This is popup view.
 
 * hide(dom, hide)
   * dom[object] - popup you want hide
-  * hide[function] - do something went hide
+  * hide[function] - do something went popup hide
 
 ## Usage
 
