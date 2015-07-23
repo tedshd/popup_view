@@ -11,7 +11,7 @@
 
     <button id="btn_2">Click popup 2</button>
 
-    <button id="dia">Click dialog</button>
+    <button id="btn_3">Click popup 3</button>
 
     <div id="popup_1" class="pop_up popup_hide">
         <h1>1</h1>
@@ -23,34 +23,30 @@
         <div class="pop_up_close"></div>
     </div>
 
-    <div id="dialog" class="pop_up popup_hide">
-        <h2>Dialog</h2>
+    <div id="popup_3" class="pop_up popup_hide">
+        <h2>3</h2>
         <div class="pop_up_close"></div>
     </div>
+
 </body>
 <script src="javascript/popup_view.js"></script>
 <script>
-var popupView = new popup(),
-    dialog = new popup({
-        dom: document.querySelector('#dialog'),
-        top: '50%',
-        left: '50%',
-        width: '360px',
-        height: '120px',
-        marginTop: '-60px',
-        marginLeft: '-180px'
-    });
+var popupView = new popup();
 
 document.querySelector('#btn_1').addEventListener('click', function () {
     popupView.show(document.querySelector('#popup_1'));
 });
 
 document.querySelector('#btn_2').addEventListener('click', function () {
-    popupView.show(document.querySelector('#popup_2'));
+    popupView.show(document.querySelector('#popup_2'), function () {
+        console.log('show do something');
+    });
 });
 
-document.querySelector('#dia').addEventListener('click', function () {
-    dialog.show();
+document.querySelector('#btn_3').addEventListener('click', function () {
+    popupView.show(document.querySelector('#popup_3'), '', function () {
+        console.log('CLOSE');
+    });
 });
 
 </script>
