@@ -1,5 +1,4 @@
 # popup_view
-popup view only use javascript
 
 ## Intro
 
@@ -8,7 +7,7 @@ This is popup view.
 ## Feature
 
 * Use CSS3
-* Only JavaScript
+* Does not require other JavaScript libraries
 * Only support IE10 up
 
 ## Method
