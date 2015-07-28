@@ -8,7 +8,7 @@ This is popup view.
 
 * Use CSS3
 * Does not require other JavaScript libraries
-* Only support IE10 up
+* Support IE9 up
 
 ## Method
 
