@@ -1,53 +1,28 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Examples</title>
-<link href="css/popup_view.css" rel="stylesheet">
+<meta name="description" content="">
+<link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
 </head>
 <body>
-    <button id="btn_1">Click popup 1</button>
-
-    <button id="btn_2">Click popup 2</button>
-
-    <button id="btn_3">Click popup 3</button>
-
-    <div id="popup_1" class="pop_up popup_hide">
-        <h1>1</h1>
-        <div class="pop_up_close"></div>
-    </div>
-
-    <div id="popup_2" class="pop_up popup_hide">
-        <h2>2</h2>
-        <div class="pop_up_close"></div>
-    </div>
-
-    <div id="popup_3" class="pop_up popup_hide">
-        <h2>3</h2>
-        <div class="pop_up_close"></div>
-    </div>
-
+  <section class="popup">
+    <section class="popup_container">
+      <div class="popup_header"></div>
+      <div class="popup_content"></div>
+      <div class="popup_footer"></div>
+    </section>
+    <div class="popup_close"></div>
+  </section>
+  <section class="popup_full hide">
+    <section class="popup_container">
+      <div class="popup_header"></div>
+      <div class="popup_content"></div>
+      <div class="popup_footer"></div>
+    </section>
+  </section>
 </body>
-<script src="javascript/popup_view.js"></script>
-<script>
-var popupView = new popup();
-
-document.querySelector('#btn_1').addEventListener('click', function () {
-    popupView.show(document.querySelector('#popup_1'));
-});
-
-document.querySelector('#btn_2').addEventListener('click', function () {
-    popupView.show(document.querySelector('#popup_2'), function () {
-        console.log('show do something');
-    });
-});
-
-document.querySelector('#btn_3').addEventListener('click', function () {
-    popupView.show(document.querySelector('#popup_3'), '', function () {
-        console.log('CLOSE');
-    });
-});
-
-</script>
 </html>
