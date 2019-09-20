@@ -8,10 +8,9 @@
 <meta name="description" content="">
 <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
 <link rel="stylesheet" href="./dist/popup.css">
-<script src="./dist/popup.js"></script>
 </head>
 <body>
-  <section class="popup">
+  <section class="popup popup_hide">
     <section class="popup_container">
       <div class="popup_header"></div>
       <div class="popup_content"></div>
@@ -34,5 +33,21 @@
     </section>
     <div class="popup_close"></div>
   </section>
+
+
+  <section id="sample" class="popup_fixed popup_hide">
+    <section class="popup_container">
+      <div class="popup_header"></div>
+      <div class="popup_content"></div>
+      <div class="popup_footer"></div>
+    </section>
+    <div class="popup_close"></div>
+  </section>
 </body>
+<script src="./dist/popup.js"></script>
+<script>
+  var popup = new popup({
+    dom: document.querySelector('#sample')
+  });
+</script>
 </html>

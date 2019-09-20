@@ -5,7 +5,7 @@
  */
 
 (function() {
-  var popup = function() {
+  var popup = function(obj) {
     function hide(dom, dosomething) {
       if (!dom) {
         console.error('popup: hide function not set dom object');

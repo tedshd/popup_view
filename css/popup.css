@@ -2,11 +2,11 @@
   --popup-close-color: #fff;
   --popup-close-size: 32px;
   --popup-bg: #ddd;
-  --popup-container-width: 300px;
+  --popup-container-width: 320px;
 }
 
 .popup_hide {
-  display: none;
+  display: none !important;
 }
 
 html, body {
