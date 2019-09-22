@@ -34,20 +34,26 @@
     <div class="popup_close"></div>
   </section>
 
+  <button class="btn">click sample</button>
 
   <section id="sample" class="popup_fixed popup_hide">
     <section class="popup_container">
-      <div class="popup_header"></div>
+      <div class="popup_header">
+        <div class="popup_close"></div>
+      </div>
       <div class="popup_content"></div>
       <div class="popup_footer"></div>
     </section>
-    <div class="popup_close"></div>
   </section>
 </body>
 <script src="./dist/popup.js"></script>
 <script>
   var popup = new popup({
     dom: document.querySelector('#sample')
+  });
+
+  document.querySelector('button').addEventListener('click', function () {
+    popup.show();
   });
 </script>
 </html>

@@ -1,8 +1,11 @@
 :root {
-  --popup-close-color: #fff;
+  --popup-close-color: #333;
   --popup-close-size: 32px;
-  --popup-bg: #ddd;
-  --popup-container-width: 320px;
+  --popup-close-margin: .5rem;
+  --popup-layer-bg: rgba(0, 0, 0, .8);
+  --popup-bg: #eee;
+  --popup-container-fixed-width: 320px;
+  --popup-container-fixed-height: 320px;
 }
 
 .popup_hide {
@@ -39,7 +42,7 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, .5);
+  background: var(--popup-layer-bg);
   box-sizing: border-box;
 }
 
@@ -47,7 +50,7 @@ html, body {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 20px 20px 0 0;
+  margin: var(--popup-close-margin) var(--popup-close-margin) 0 0;
   width: var(--popup-close-size);
   height: var(--popup-close-size);
   cursor: pointer;
@@ -82,7 +85,19 @@ html, body {
 }
 
 .popup_fixed .popup_container {
-  width: var(--popup-container-width);
+  width: var(--popup-container-fixed-width);
+  height: var(--popup-container-fixed-height);
   min-height: 3rem;
-  background: var(--popup-bg);
+}
+
+.popup_header {
+  position: relative;
+}
+
+.popup_content {
+  position: relative;
+}
+
+.popup_footer {
+  position: relative;
 }
