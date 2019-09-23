@@ -1,11 +1,14 @@
 :root {
-  --popup-close-color: #333;
-  --popup-close-size: 32px;
-  --popup-close-margin: .5rem;
+  --popup-close-color: #000;
+  --popup-close-size: 16px;
+  --popup-close-margin: .2rem;
+  --popup-close-bold: 2px;
   --popup-layer-bg: rgba(0, 0, 0, .8);
   --popup-bg: #eee;
-  --popup-container-fixed-width: 320px;
-  --popup-container-fixed-height: 320px;
+  --popup-container-fixed-width: auto;
+  --popup-container-fixed-height: auto;
+  --popup-container-fixed-min-width: 320px;
+  --popup-container-fixed-min-height: 320px;
 }
 
 .popup_hide {
@@ -47,6 +50,7 @@ html, body {
 }
 
 .popup_close {
+  z-index: 165;
   position: absolute;
   top: 0;
   right: 0;
@@ -62,9 +66,9 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: var(--popup-close-bold);
   background: var(--popup-close-color);
-  transform: rotate(45deg) translate(10px, 10px);
+  transform: rotate(45deg) translate(calc(var(--popup-close-bold)*2), calc(var(--popup-close-bold)*2));
 }
 
 .popup_close:after {
@@ -73,31 +77,58 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: var(--popup-close-bold);
   background: var(--popup-close-color);
-  transform: rotate(-45deg) translate(-10px, 10px);
+  transform: rotate(-45deg) translate(calc(-var(--popup-close-bold)*2), calc(var(--popup-close-bold)*2));
 }
 
 .popup_container {
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
   background: var(--popup-bg);
 }
 
 .popup_fixed .popup_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: var(--popup-container-fixed-width);
   height: var(--popup-container-fixed-height);
-  min-height: 3rem;
+  min-width: var(--popup-container-fixed-min-width);
+  min-height: var(--popup-container-fixed-min-height);
 }
 
-.popup_header {
+.popup_header,
+.popup_content,
+.popup_footer {
   position: relative;
+  box-sizing: border-box;
+  padding: .5rem;
 }
 
 .popup_content {
-  position: relative;
+  flex-grow: 1;
+}
+
+.popup_content[data-align='center'] {
+  text-align: center;
+}
+
+.popup_content[data-align='right'] {
+  flex-grow: right;
 }
 
 .popup_footer {
-  position: relative;
+  text-align: center;
+}
+
+.popup_footer[data-align='left'] {
+  text-align: left;
+}
+
+.popup_footer[data-align='right'] {
+  text-align: right;
 }

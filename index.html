@@ -25,35 +25,50 @@
       <div class="popup_footer"></div>
     </section>
   </section>
-  <section class="popup_fixed popup_hide">
+  <section id="sample_dialog" class="popup_fixed popup_hide">
     <section class="popup_container">
-      <div class="popup_header"></div>
-      <div class="popup_content"></div>
-      <div class="popup_footer"></div>
+      <div class="popup_header">HEAD</div>
+      <div class="popup_content">CONTENT</div>
+      <div class="popup_footer" data-align="right">FOOT</div>
     </section>
     <div class="popup_close"></div>
   </section>
 
-  <button class="btn">click sample</button>
+  <button id="loghtbox" class="btn">click light box sample</button>
+  <button id="dialog" class="btn">click dialog sample</button>
 
-  <section id="sample" class="popup_fixed popup_hide">
+  <section id="sample_lightbox" class="popup_fixed popup_hide">
     <section class="popup_container">
       <div class="popup_header">
         <div class="popup_close"></div>
       </div>
-      <div class="popup_content"></div>
+      <div class="popup_content">
+        <img src="" alt="">
+      </div>
       <div class="popup_footer"></div>
     </section>
   </section>
 </body>
 <script src="./dist/popup.js"></script>
 <script>
-  var popup = new popup({
-    dom: document.querySelector('#sample')
+  var popupLightbox = new popup({
+    dom: document.querySelector('#sample_lightbox')
   });
 
-  document.querySelector('button').addEventListener('click', function () {
-    popup.show();
+  document.querySelector('#loghtbox').addEventListener('click', function () {
+    popupLightbox.show(function (dom) {
+      dom.querySelector('.popup_content img').src = 'https://fakeimg.pl/500x320/';
+    });
+  });
+
+  var popupDialog = new popup({
+    dom: document.querySelector('#sample_dialog'),
+    width: '320px',
+    height: '480px'
+  });
+
+  document.querySelector('#dialog').addEventListener('click', function () {
+    popupDialog.show();
   });
 </script>
 </html>
