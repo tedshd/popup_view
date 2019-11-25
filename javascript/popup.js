@@ -29,13 +29,20 @@
       dom.querySelector('.popup_container').style.minHeight = obj.minHeight;
     }
 
-    dom.addEventListener('click', function (e) {
+    // dom.addEventListener('click', function (e) {
+    //   hide(obj.dosomethingClose);
+    // });
+
+    // dom.querySelector('.popup_container').addEventListener('click', function (e) {
+    //   e.stopPropagation();
+    // });
+    dom.addEventListener('mousedown', function (e) {
       hide(obj.dosomethingClose);
     });
 
-    dom.querySelector('.popup_container').addEventListener('click', function (e) {
+    dom.querySelector('.popup_container').addEventListener('mousedown', function (e) {
       e.stopPropagation();
-    })
+    });
 
     if (dom.querySelector('.popup_close')) {
       dom.querySelector('.popup_close').addEventListener('click', function() {
