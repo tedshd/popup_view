@@ -29,13 +29,6 @@
       dom.querySelector('.popup_container').style.minHeight = obj.minHeight;
     }
 
-    // dom.addEventListener('click', function (e) {
-    //   hide(obj.dosomethingClose);
-    // });
-
-    // dom.querySelector('.popup_container').addEventListener('click', function (e) {
-    //   e.stopPropagation();
-    // });
     dom.addEventListener('mousedown', function (e) {
       hide(obj.dosomethingClose);
     });
