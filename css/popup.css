@@ -111,6 +111,7 @@ html, body {
 
 .popup_content {
   flex-grow: 1;
+  overflow-y: scroll;
 }
 
 .popup_content[data-align='center'] {

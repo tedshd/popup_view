@@ -18,13 +18,17 @@
     </section>
     <div class="popup_close"></div>
   </section>
+
   <section class="popup_full popup_hide">
     <section class="popup_container">
-      <div class="popup_header"></div>
+      <div class="popup_header">
+        <div class="popup_close"></div>
+      </div>
       <div class="popup_content"></div>
       <div class="popup_footer"></div>
     </section>
   </section>
+
   <section id="sample_dialog" class="popup_fixed popup_hide">
     <section class="popup_container">
       <div class="popup_header">HEAD</div>
@@ -34,8 +38,72 @@
     <div class="popup_close"></div>
   </section>
 
-  <button id="loghtbox" class="btn">click light box sample</button>
-  <button id="dialog" class="btn">click dialog sample</button>
+  <section id="sample_dialog_scroll" class="popup_fixed popup_hide">
+    <section class="popup_container">
+      <div class="popup_header">HEAD</div>
+      <div class="popup_content">
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT<br>
+        CONTENT
+      </div>
+      <div class="popup_footer" data-align="right">FOOT</div>
+    </section>
+    <div class="popup_close"></div>
+  </section>
 
   <section id="sample_lightbox" class="popup_fixed popup_hide">
     <section class="popup_container">
@@ -48,6 +116,11 @@
       <div class="popup_footer"></div>
     </section>
   </section>
+
+  <button id="full" class="btn">click full sample</button>
+  <button id="dialog" class="btn">click dialog sample</button>
+  <button id="dialog_scroll" class="btn">click dialog scroll sample</button>
+  <button id="lightbox" class="btn">click light box sample</button>
 </body>
 <script src="./dist/popup.js"></script>
 <script>
@@ -55,7 +128,7 @@
     dom: document.querySelector('#sample_lightbox')
   });
 
-  document.querySelector('#loghtbox').addEventListener('click', function () {
+  document.querySelector('#lightbox').addEventListener('click', function () {
     popupLightbox.show(function (dom) {
       dom.querySelector('.popup_content img').src = 'https://fakeimg.pl/500x320/';
     });
@@ -69,6 +142,24 @@
 
   document.querySelector('#dialog').addEventListener('click', function () {
     popupDialog.show();
+  });
+
+  var popupDialogScroll = new popup({
+    dom: document.querySelector('#sample_dialog_scroll'),
+    width: '320px',
+    height: '480px'
+  });
+
+  document.querySelector('#dialog_scroll').addEventListener('click', function () {
+    popupDialogScroll.show();
+  });
+
+  var popupFull = new popup({
+    dom: document.querySelector('.popup_full')
+  });
+
+  document.querySelector('#full').addEventListener('click', function () {
+    popupFull.show();
   });
 </script>
 </html>
