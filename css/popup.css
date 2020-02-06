@@ -1,7 +1,7 @@
 :root {
   --popup-close-color: #000;
   --popup-close-size: 16px;
-  --popup-close-margin: .2rem;
+  --popup-close-margin: .5rem;
   --popup-close-bold: 2px;
   --popup-layer-bg: rgba(0, 0, 0, .8);
   --popup-bg: #eee;
