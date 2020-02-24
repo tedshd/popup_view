@@ -29,13 +29,21 @@
       dom.querySelector('.popup_container').style.minHeight = obj.minHeight;
     }
 
-    dom.addEventListener('click', function (e) {
+    if (obj.maxWidth) {
+      dom.querySelector('.popup_container').style.maxWidth = obj.maxWidth;
+    }
+
+    if (obj.maxHeight) {
+      dom.querySelector('.popup_container').style.maxHeight = obj.maxHeight;
+    }
+
+    dom.addEventListener('mousedown', function (e) {
       hide(obj.dosomethingClose);
     });
 
-    dom.querySelector('.popup_container').addEventListener('click', function (e) {
+    dom.querySelector('.popup_container').addEventListener('mousedown', function (e) {
       e.stopPropagation();
-    })
+    });
 
     if (dom.querySelector('.popup_close')) {
       dom.querySelector('.popup_close').addEventListener('click', function() {
@@ -64,6 +72,7 @@
         });
       }
     }
+
     this.show = show;
     this.hide = hide;
   };
