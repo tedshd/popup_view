@@ -29,6 +29,14 @@
       dom.querySelector('.popup_container').style.minHeight = obj.minHeight;
     }
 
+    if (obj.maxWidth) {
+      dom.querySelector('.popup_container').style.maxWidth = obj.maxWidth;
+    }
+
+    if (obj.maxHeight) {
+      dom.querySelector('.popup_container').style.maxHeight = obj.maxHeight;
+    }
+
     dom.addEventListener('mousedown', function (e) {
       hide(obj.dosomethingClose);
     });
