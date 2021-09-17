@@ -6,12 +6,17 @@
 
 (function() {
   var popup = function(obj) {
+    var maskClose = true;
     if (!obj.dom) {
       console.error('popup: hide function not set dom object');
       return;
     }
 
     var dom = obj.dom;
+
+    if (obj.maskClose) {
+      maskClose = obj.maskClose;
+    }
 
     if (obj.width) {
       dom.querySelector('.popup_container').style.width = obj.width;
@@ -37,9 +42,11 @@
       dom.querySelector('.popup_container').style.maxHeight = obj.maxHeight;
     }
 
-    dom.addEventListener('mousedown', function (e) {
-      hide(obj.dosomethingClose);
-    });
+    if (maskClose) {
+      dom.addEventListener('mousedown', function (e) {
+        hide(obj.dosomethingClose);
+      });
+    }
 
     dom.querySelector('.popup_container').addEventListener('mousedown', function (e) {
       e.stopPropagation();
@@ -54,6 +61,9 @@
     function hide(dosomething) {
       if (dosomething) {
         dosomething(dom);
+      }
+      if (obj.dosomethingClose) {
+        obj.dosomethingClose(dom);
       }
       dom.classList.add('popup_hide');
       document.body.classList.remove('popup_show');
@@ -78,3 +88,4 @@
   };
   window.popup = popup;
 })();
+
