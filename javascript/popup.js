@@ -14,31 +14,31 @@
 
     var dom = obj.dom;
 
-    if (obj.maskClose) {
+    if (obj.maskClose != undefined) {
       maskClose = obj.maskClose;
     }
 
-    if (obj.width) {
+    if (obj.width != undefined) {
       dom.querySelector('.popup_container').style.width = obj.width;
     }
 
-    if (obj.height) {
+    if (obj.height != undefined) {
       dom.querySelector('.popup_container').style.height = obj.height;
     }
 
-    if (obj.minWidth) {
+    if (obj.minWidth != undefined) {
       dom.querySelector('.popup_container').style.minWidth = obj.minWidth;
     }
 
-    if (obj.minHeight) {
+    if (obj.minHeight != undefined) {
       dom.querySelector('.popup_container').style.minHeight = obj.minHeight;
     }
 
-    if (obj.maxWidth) {
+    if (obj.maxWidth != undefined) {
       dom.querySelector('.popup_container').style.maxWidth = obj.maxWidth;
     }
 
-    if (obj.maxHeight) {
+    if (obj.maxHeight != undefined) {
       dom.querySelector('.popup_container').style.maxHeight = obj.maxHeight;
     }
 
