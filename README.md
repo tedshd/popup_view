@@ -23,6 +23,8 @@ Use it like dialog or lightbox.
 | minWidth         | STRING          | option  | popup content min width | `'300px'` |
 | minHeight        | STRING          | option  | popup content min height | `'300px'` |
 | dosomethingClose | FUNCTION Object | option  | do something when popup close | `function(dom) {console.log('show popup dom', dom)}` |
+| maskClose        | Boolean          | option  | support click mask layer close d4 is true | `true` |
+| pushStatus        | Boolean          | option  | support browser back button close popup view d4 is false | `true` |
 
 ## Method
 
